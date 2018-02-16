@@ -1,0 +1,64 @@
+--- 
+layout: default 
+--- 
+
+{% if site.posts.size == 0 %} No post found {% else %} 
+  {% for post in site.posts %}
+    <div class="content list">
+      <div class="list-item">
+        <h2 class="list-post-title">
+          <a href="{{post.url | prepend:site.baseurl}}">{{ post.title }}</a>
+          <div class="list-post-date">
+            <time>{{ post.date | date_to_string}}</time>
+          </div>
+        </h2>
+      </div>
+    </div>
+  {% endfor %} 
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="home">
+  {% if page.title %}
+    <h1 class="page-heading">{{ page.title }} ola</h1>
+  {% endif %}
+
+  {{ content }}
+
+  {% if site.posts.size > 0 %}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {% for post in site.posts %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {% if site.show_excerpts %}
+          {{ post.excerpt }}
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {% endif %}
+
+</div>
+ -->
